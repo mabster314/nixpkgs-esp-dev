@@ -29,6 +29,7 @@
 , ninja
 , ncurses5
 , dfu-util
+, bashInteractive
 }:
 
 let
@@ -69,9 +70,9 @@ let
           esptool
           esp-idf-kconfig
           esp-idf-monitor
-          esp-idf-nvs-partition-gen
           esp-idf-size
           esp-idf-panic-decoder
+          esp-idf-nvs-partition-gen
           pyclang
 
           freertos_gdb
@@ -112,6 +113,8 @@ stdenv.mkDerivation rec {
     ncurses5
 
     dfu-util
+
+    bashInteractive
   ] ++ toolDerivationsToInclude;
 
   # We are including cmake and ninja so that downstream derivations (eg. shells)
